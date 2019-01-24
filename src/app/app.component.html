@@ -1,20 +1,113 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<header fxLayout='row'>
+  <mat-toolbar color="primary">
+    <div class="app-logo">
+      <h1>FoodCalc</h1>
+      <h2>{{title}}</h2>
+    </div>
+    <div fxFlex></div>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>fingerprint</mat-icon>
+          <span>Login</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>close</mat-icon>
+          <span>Logout</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>content_paste</mat-icon>
+          <span>Registration</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</header>
+<section id="main" class="main" fxLayout='row'>
+  <section class="sidebar" fxFlex="220px">
+    <div class="main-menu-header">
+      <div fxLayout='row' fxFlex="200px">
+        <div fxFlex="33%">
+          <button mat-mini-fab>
+            <mat-icon color="primary">message</mat-icon>
+          </button>
+        </div>
+        <div fxFlex="33%">
+          <button mat-mini-fab>
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+        <div fxFlex="33%">
+          <button mat-mini-fab>
+            <mat-icon>list</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="main-menu">
+      <mat-list>
+        <h3 mat-subheader>Navigation</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <h4 mat-line>
+            <a href="#">Dashboard</a>
+          </h4>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>featured_play_list</mat-icon>
+          <h4 mat-line>
+            <a href="#">Moja lista produktów</a>
+          </h4>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>wb_sunnyt</mat-icon>
+          <h4 mat-line>
+            <a href="#">Produkty sezonowe</a>
+          </h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Notes</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>note</mat-icon>
+          <h4 mat-line>
+            <a href="#">Notatki</a>
+          </h4>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </section>
+  <section class="content" fxFlex>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon mat-list-icon>accessibility</mat-icon>
+        </div>
+        <mat-card-title>Mój bilans dnia</mat-card-title>
+        <mat-card-subtitle>
+          <mat-chip-list>
+            <mat-chip>Kalorie: 2500</mat-chip>
+            <mat-chip>Węglowodany: 120</mat-chip>
+            <mat-chip color="primary" selected="true">Białko: 23</mat-chip>
+            <mat-chip color="accent" selected="true">Tłuszcze: 340</mat-chip>
+          </mat-chip-list>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Wybierz porę posiłku i dodawaj produkty. Licz kalorie i sprawdz swój dzieny bilans składnoków odżywczych.
+        </p>
+        <mat-tab-group>
+          <mat-tab label="Śniadanie">Content 1</mat-tab>
+          <mat-tab label="Drugie śnadanie">Content 2</mat-tab>
+          <mat-tab label="Obiad/Lunch">Content 2</mat-tab>
+          <mat-tab label="Podwieczorek">Content 2</mat-tab>
+          <mat-tab label="Kolacja">Content 2</mat-tab>
+          <mat-tab label="Przegryzka">Content 2</mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</section>
