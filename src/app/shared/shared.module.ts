@@ -11,6 +11,26 @@ import {
   MatTableModule,
   MatTabsModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+import { L10nConfig, L10nLoader, LocalizationModule, StorageStrategy, ProviderType, LogLevel } from 'angular-l10n';
+
+const l10nConfig: L10nConfig = {
+  locale: {
+      languages: [
+          { code: 'pl', dir: 'ltr' },
+          { code: 'en', dir: 'ltr' }
+      ],
+      language: 'pl',
+      storage: StorageStrategy.Cookie
+  },
+  translation: {
+      providers: [
+          { type: ProviderType.Static, prefix: './assets/locale/' }
+      ],
+      caching: true,
+      composedKeySeparator: '.',
+  }
+};
 
 @NgModule({
   declarations: [],
@@ -25,7 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatChipsModule,
     MatTableModule,
     MatTabsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    LocalizationModule.forRoot(l10nConfig)
   ],
   exports: [
     MatButtonModule,
@@ -37,7 +59,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatChipsModule,
     MatTableModule,
     MatTabsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    LocalizationModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  constructor(public l10nLoader: L10nLoader) {
+    this.l10nLoader.load();
+  }
+ }

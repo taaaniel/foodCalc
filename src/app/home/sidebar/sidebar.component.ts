@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocaleService, TranslationService, Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  @Language() lang: string;
+
+  constructor(
+    public locale: LocaleService,
+    public translation: TranslationService
+  ) { }
 
   ngOnInit() {
   }
