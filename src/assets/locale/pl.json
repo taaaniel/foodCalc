@@ -23,6 +23,8 @@
     "DASHBOARD": "Dashboard",
     "MY_PRODUCT_LIST": "Lista produktów",
     "SEASONAL_PRODUCTS": "Produkty sezonowe",
-    "NOTES": "Notatki"
+    "NOTES": "Notatki",
+    "MY_DISHES": "Moje potrawy",
+    "MY_PRODUCTS": "Moje produkty"
   }
 }
