@@ -24,6 +24,7 @@ import { DishModule } from './dish/dish.module';
     HomeModule,
     DishModule,
     RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'dish', component: DishComponent},

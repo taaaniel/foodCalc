@@ -24,19 +24,19 @@
       <mat-list-item>
         <mat-icon mat-list-icon>dashboard</mat-icon>
         <h4 mat-line>
-          <a href="#">{{'SIDEBAR.DASHBOARD' | translate: lang}}</a>
+          <a [routerLink]="['/dashboard']">{{'SIDEBAR.DASHBOARD' | translate: lang}}</a>
         </h4>
       </mat-list-item>
       <mat-list-item>
         <mat-icon mat-list-icon>restaurant</mat-icon>
         <h4 mat-line>
-          <a href="#">{{'SIDEBAR.MY_DISHES' | translate: lang}}</a>
+          <a [routerLink]="['/dish']">{{'SIDEBAR.MY_DISHES' | translate: lang}}</a>
         </h4>
       </mat-list-item>
       <mat-list-item>
         <mat-icon mat-list-icon>fastfood</mat-icon>
         <h4 mat-line>
-          <a href="#">{{'SIDEBAR.MY_PRODUCTS' | translate: lang}}</a>
+          <a [routerLink]="['/product']">{{'SIDEBAR.MY_PRODUCTS' | translate: lang}}</a>
         </h4>
       </mat-list-item>
       <mat-divider></mat-divider>
