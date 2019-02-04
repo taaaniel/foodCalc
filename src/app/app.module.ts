@@ -6,16 +6,17 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
-import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DishComponent } from './dish/dish.component';
 import { DishModule } from './dish/dish.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeRoutingModule } from './home/home-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -23,13 +24,8 @@ import { DishModule } from './dish/dish.module';
     SharedModule,
     HomeModule,
     DishModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'dashboard'},
-      { path: 'login', component: LoginComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'dish', component: DishComponent},
-      { path: 'product', component: ProductComponent}
-    ])
+    AppRoutingModule,
+    HomeRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
