@@ -9,7 +9,10 @@ import {
   MatListModule,
   MatChipsModule,
   MatTableModule,
-  MatTabsModule } from '@angular/material';
+  MatTabsModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatInputModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { L10nConfig, L10nLoader, LocalizationModule, StorageStrategy, ProviderType, LogLevel } from 'angular-l10n';
@@ -45,6 +48,9 @@ const l10nConfig: L10nConfig = {
     MatChipsModule,
     MatTableModule,
     MatTabsModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
     FlexLayoutModule,
     HttpClientModule,
     LocalizationModule.forRoot(l10nConfig)
@@ -59,6 +65,9 @@ const l10nConfig: L10nConfig = {
     MatChipsModule,
     MatTableModule,
     MatTabsModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
     FlexLayoutModule,
     HttpClientModule,
     LocalizationModule

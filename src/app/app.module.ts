@@ -10,6 +10,8 @@ import { DishModule } from './dish/dish.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     SharedModule,
     HomeModule,
     DishModule,
     AppRoutingModule,
     HomeRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
