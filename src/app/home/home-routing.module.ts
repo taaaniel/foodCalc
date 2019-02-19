@@ -6,13 +6,15 @@ import { DishComponent } from '../dish/dish.component';
 import { ProductComponent } from '../product/product.component';
 import { HomeComponent } from './home.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { ProductDetailsComponent } from '../product/product-details/product-details.component';
 
 const HOME_ROUTES: Route[] = [
   { path: 'home', component: HomeComponent,  children: [
     { path: '', pathMatch: 'full', redirectTo: 'dashboard', canActivate: [AuthGuard] },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'dish', component: DishComponent, canActivate: [AuthGuard]},
-    { path: 'product', component: ProductComponent, canActivate: [AuthGuard]}
+    { path: 'product', component: ProductComponent, canActivate: [AuthGuard]},
+    { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthGuard]}
   ]},
 ];
 @NgModule({

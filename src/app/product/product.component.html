@@ -1,3 +1,8 @@
-<p>
-  product works!
-</p>
+<ng-container *ngIf="productList">
+    <mat-list>
+        <mat-list-item *ngFor="let product of productList" [routerLink]="['/home/product', product.id]">
+          <span class="routerPointer">{{ product?.name }}</span>
+        </mat-list-item>
+       </mat-list>
+</ng-container>
+

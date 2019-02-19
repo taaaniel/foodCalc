@@ -12,13 +12,15 @@ import { HomeRoutingModule } from './home/home-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth/auth.guard';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProductComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
